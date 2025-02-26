@@ -39,7 +39,7 @@ const PollTable = () => {
       .finally(() => {
         setLoading(false); 
       });
-  }, []); 
+  }, [USER]); 
 
   useEffect(() => {
     const fetchData = async () => {
