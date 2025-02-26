@@ -9,6 +9,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const baseUrl = process.env.REACT_APP_API_BASE_URL;
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -30,7 +31,7 @@ const Login = () => {
       console.log("data", data)
       if (data.result === "success") {
         // setIsAuthenticated(true);
-      const getUserToken = await fetch(`${REACT_APP_API_BASE_URL}/api/auth/login`, {
+      const getUserToken = await fetch(`${baseUrl}/api/auth/login`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
